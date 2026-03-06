@@ -25,6 +25,133 @@ options:
                      with examples
 ```
 
+- `permissions`: [`symbolic`, `octal`] are the only two accepted arguments.
+
+
+### Output examples
+
+```bash
+upasuge:LinuxPermissionHelp/ (main*) $ perms -i README.md    [4:08:26]
+
+=== File/Directory Information ===
+Path:       /home/supasuge/Utils/LinuxPermissionHelp/README.md
+Type:       File
+Size:       1148 bytes
+Owner:      1000 (supasuge)
+Group:      1000 (supasuge)
+Accessed:   2026-03-06 04:08:26
+Modified:   2026-03-06 04:08:26
+Changed:    2026-03-06 04:08:26
+Permissions:644 / -rw-r--r-- (User: read, write; Group: read; Others: read)
+chattr flags:--------------e-------
+ Attributes:
+   - Extent format
+supasuge:LinuxPermissionHelp/ (main*) $ perms -i README.md symbolic
+
+=== Permissions Explanation ===
++--------+---------------+--------+---------+-----------+
+| Type   | Permissions   | Read   | Write   | Execute   |
++========+===============+========+=========+===========+
+| User   | ---           | False  | False   | False     |
++--------+---------------+--------+---------+-----------+
+| Group  | ---           | False  | False   | False     |
++--------+---------------+--------+---------+-----------+
+| Others | ---           | False  | False   | False     |
++--------+---------------+--------+---------+-----------+
+
+=== Representations ===
+Numeric:  000
+Symbolic: ---------
+
+=== Full Linux Permission Table ===
++---------+----------+--------------------------+
+|   Octal | Symbol   | Meaning                  |
++=========+==========+==========================+
+|       0 | ---      | No permission            |
++---------+----------+--------------------------+
+|       1 | --x      | Execute only             |
++---------+----------+--------------------------+
+|       2 | -w-      | Write only               |
++---------+----------+--------------------------+
+|       3 | -wx      | Write and execute        |
++---------+----------+--------------------------+
+|       4 | r--      | Read only                |
++---------+----------+--------------------------+
+|       5 | r-x      | Read and execute         |
++---------+----------+--------------------------+
+|       6 | rw-      | Read and write           |
++---------+----------+--------------------------+
+|       7 | rwx      | Read, write, and execute |
++---------+----------+--------------------------+
+```
+
+---
+
+```bash
+$ perms -i README.md octal
+
+=== Permissions Explanation ===
++--------+---------------+--------+---------+-----------+
+| Type   | Permissions   | Read   | Write   | Execute   |
++========+===============+========+=========+===========+
+| User   | ---           | False  | False   | False     |
++--------+---------------+--------+---------+-----------+
+| Group  | ---           | False  | False   | False     |
++--------+---------------+--------+---------+-----------+
+| Others | ---           | False  | False   | False     |
++--------+---------------+--------+---------+-----------+
+
+=== Representations ===
+Numeric:  000
+Symbolic: ---------
+
+=== Full Linux Permission Table ===
++---------+----------+--------------------------+
+|   Octal | Symbol   | Meaning                  |
++=========+==========+==========================+
+|       0 | ---      | No permission            |
++---------+----------+--------------------------+
+|       1 | --x      | Execute only             |
++---------+----------+--------------------------+
+|       2 | -w-      | Write only               |
++---------+----------+--------------------------+
+|       3 | -wx      | Write and execute        |
++---------+----------+--------------------------+
+|       4 | r--      | Read only                |
++---------+----------+--------------------------+
+|       5 | r-x      | Read and execute         |
++---------+----------+--------------------------+
+|       6 | rw-      | Read and write           |
++---------+----------+--------------------------+
+|       7 | rwx      | Read, write, and execute |
++---------+----------+--------------------------+
+```
+
+---
+
+```bash
+$ perms -i README.md -c -u
+usage: perms [-h] [-u UMASK] [-c] [-i PATH] [--reference]
+             [permissions]
+perms: error: argument -u/--umask: expected one argument
+supasuge:LinuxPermissionHelp/ (main*) $ perms -i README.md -c [4:09:04]
+
+=== File/Directory Information ===
+Path:       /home/supasuge/Utils/LinuxPermissionHelp/README.md
+Type:       File
+Size:       1148 bytes
+Owner:      1000 (supasuge)
+Group:      1000 (supasuge)
+Accessed:   2026-03-06 04:08:26
+Modified:   2026-03-06 04:08:26
+Changed:    2026-03-06 04:08:26
+Permissions:644 / -rw-r--r-- (User: read, write; Group: read; Others: read)
+chattr flags:--------------e-------
+ Attributes:
+   - Extent format
+```
+
+
 ## chmod-calc
 
 Help menu:
