@@ -4,6 +4,9 @@ A command-line utility for encrypting and decrypting files using OpenSSL with
 password-based key derivation. Designed for local use, scripting, and automated
 workflows where predictable behavior and explicit user confirmation are required.
 
+> [!CAUTION]
+> It's not reccomended to use this script for legitmate secure usage. There are multiple small issues within it. 
+
 ---
 
 ## Features
