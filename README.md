@@ -31,7 +31,7 @@ options:
 ### Output examples
 
 ```bash
-upasuge:LinuxPermissionHelp/ (main*) $ perms -i README.md    [4:08:26]
+$ perms -i README.md    [4:08:26]
 
 === File/Directory Information ===
 Path:       /home/supasuge/Utils/LinuxPermissionHelp/README.md
@@ -46,7 +46,12 @@ Permissions:644 / -rw-r--r-- (User: read, write; Group: read; Others: read)
 chattr flags:--------------e-------
  Attributes:
    - Extent format
-supasuge:LinuxPermissionHelp/ (main*) $ perms -i README.md symbolic
+```
+
+---
+
+```bash
+$ perms -i README.md symbolic
 
 === Permissions Explanation ===
 +--------+---------------+--------+---------+-----------+
@@ -153,6 +158,8 @@ chattr flags:--------------e-------
 
 
 ## chmod-calc
+
+This tool is based off of KickSecure's built-in tool `chmod-calc` but made better with prettier output (tabular).
 
 Help menu:
 
