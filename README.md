@@ -8,6 +8,21 @@ If you choose to use any of these scripts, it's reccomended you place them withi
 
 Similar to `perms` except quite a bit more comprehensive as far as showcasing examples.
 
+## catall
+
+This tool was created prior to the release of claude-code/codex in which they had the capability to scan/understand large codebases, so I used this quick script to easily format entire directories of code, excluding what wasn't necessary such as Python bytecode stored in `__pycache__`. It simply output's all the file from the whitelist and ignores the specified exclusion list of files/directories and using the `--cl` argument, copy it to your clipboard. 
+
+**Other args**:
+- `--tree`: Print the directory tree
+
+**Example usage**:
+
+```bash
+catall . --tree -d '.venv,.claude,__pycache_,thoughts,tests,content.pytest_cache,logos' -x CLAUDE.md,One\ Pager.pdf,uv.lock --cl
+```
+- Output's all files in the current directory + child directory contents except for those that are specified with `-d` for directories, and `-x` for files to exclude.
+
+
 ## perms
 
 Help menu:
