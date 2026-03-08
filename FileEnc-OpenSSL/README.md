@@ -42,7 +42,7 @@ No shell configuration files are modified.
 ### Encrypt a file
 
 ```bash
-encrypt enc -i INPUT_FILE
+crypt enc -i INPUT_FILE
 ```
 
 Creates an encrypted file named:
@@ -62,7 +62,7 @@ The user is prompted to:
 ### Decrypt a file
 
 ```sh
-encrypt dec -i INPUT_FILE.enc
+enrypt dec -i INPUT_FILE.enc
 ```
 
 Creates a decrypted file with the `.enc` suffix removed.
@@ -72,8 +72,8 @@ Creates a decrypted file with the `.enc` suffix removed.
 ### Custom output path
 
 ```sh
-encrypt enc -i file.txt -o encrypted.bin
-encrypt dec -i encrypted.bin -o recovered.txt
+crypt enc -i file.txt -o encrypted.bin
+crypt dec -i encrypted.bin -o recovered.txt
 ```
 
 ---
@@ -81,8 +81,8 @@ encrypt dec -i encrypted.bin -o recovered.txt
 ## Command Syntax
 
 ```text
-encrypt enc -i INPUT_FILE [-o OUTPUT_FILE]
-encrypt dec -i INPUT_FILE [-o OUTPUT_FILE]
+crypt enc -i INPUT_FILE [-o OUTPUT_FILE]
+crypt dec -i INPUT_FILE [-o OUTPUT_FILE]
 ```
 
 ### Options
@@ -100,7 +100,7 @@ encrypt dec -i INPUT_FILE [-o OUTPUT_FILE]
 
 * Cipher: `AES-256-CBC`
 * Key derivation: `PBKDF2`
-* Iterations: `100000` (can be increaded though should be fine)
+* Iterations: `600000` (can be increaded though should be fine)
 * Salt: enabled (OpenSSL salted format)
 
 These parameters balance compatibility and resistance to offline brute-force
@@ -134,7 +134,7 @@ Passwords may be supplied via standard input:
 - I highly reccomend against this as a simple `history` command would then reveal your encryption password.
 
 ```sh
-printf '%s\n%s\nn\n' "password" "password" | encrypt enc -i file.txt
+printf '%s\n%s\nn\n' "password" "password" | crypt enc -i file.txt
 ```
 
 This mode is suitable for automation but should be used cautiously.
@@ -166,13 +166,13 @@ The tests verify:
 Remove the installed symlink:
 
 ```sh
-rm ~/.local/bin/encrypt
+rm ~/.local/bin/crypt
 ```
 
 or, if installed system-wide:
 
 ```sh
-sudo rm /usr/local/bin/encrypt
+sudo rm /usr/local/bin/crypt
 ```
 
 No other files are modified.
