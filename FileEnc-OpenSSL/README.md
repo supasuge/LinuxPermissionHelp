@@ -5,7 +5,7 @@ password-based key derivation. Designed for local use, scripting, and automated
 workflows where predictable behavior and explicit user confirmation are required.
 
 > [!CAUTION]
-> It's not reccomended to use this script for legitmate secure usage. There are multiple small issues within it. Was mainly written for learning purposes etc.
+> It's not reccomended to use this script for legitmate secure usage. There are multiple small issues within it. Was mainly written for learning purposes and absolutely should not be used to handle sensitive data of any kind. Use well-known and reputable pre-existing tools such as `age`/`OpenPGP` (though OpenPGP is an entirely different conversation as its always has been heavily criticized by cryptographers for various reasons, though generally it's a perfectly fine option for now). 
 
 ---
 
