@@ -200,10 +200,4 @@ workflows. I don't reccomend this for use in secure environments in the slightes
 
 ##### TODO
 
-- detached signature support
-- AEAD (AES-GCM) option
-- More ciphers
-- SSH key support
-- GPG support (make it simple to use pre-existing `gpg` tool.
-- Hybrid-encryption
-- PQC ciphers (Digital signatures, KEM, encryption etc.)
+- A lot
